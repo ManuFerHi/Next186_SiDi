@@ -1,0 +1,2 @@
+Warning (10268): Verilog HDL information at osd.v(101): always construct contains both blocking and non-blocking assignments File: E:/G/Electronica/SiDi/Sources/Computer/Next186_SoC/mist-modules/osd.v Line: 101
+Info (10281): Verilog HDL Declaration information at opl3.v(55): object "ce" differs only in case from object "CE" in the same scope File: E:/G/Electronica/SiDi/Sources/Computer/Next186_SoC/opl3.v Line: 55
