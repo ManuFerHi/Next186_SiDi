@@ -88,14 +88,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "AUDIO_L",
-					"strict" : false
-				},
-				{
-					"name" : "AUDIO_R",
-					"strict" : false
-				},
-				{
 					"name" : "TX_EXT",
 					"strict" : false
 				},
@@ -256,10 +248,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "CLOCK_27",
-					"strict" : false
-				},
-				{
 					"name" : "SPI_SCK",
 					"strict" : false
 				},
@@ -268,11 +256,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "RX_EXT",
+					"name" : "SPI_DI",
 					"strict" : false
 				},
 				{
-					"name" : "SPI_DI",
+					"name" : "SPI_SS3",
+					"strict" : false
+				},
+				{
+					"name" : "RX_EXT",
 					"strict" : false
 				}
 			]

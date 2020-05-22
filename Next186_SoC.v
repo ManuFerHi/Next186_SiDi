@@ -38,8 +38,7 @@ module Next186_SoC
 );
 
 parameter CONF_STR = {
-        "BBC;",
-        "T0,Reset;"
+        "NEXT186;;",
 };
 
 wire [1:0] scanlines = status[2:1];
@@ -194,11 +193,11 @@ mist_video #(.COLOR_DEPTH(1), .SD_HCNT_WIDTH(10)) mist_video (
 	.VSync       ( core_vs    ),
 
 	// MiST video output signals "eliminado porque no queda BRAM libre"
-	.VGA_R       (),
-	.VGA_G       (),
-	.VGA_B       (),
-	.VGA_VS      (),
-	.VGA_HS      ()
+	.VGA_R       (VGA_R),
+	.VGA_G       (VGA_G),
+	.VGA_B       (VGA_B),
+	.VGA_VS      (VGA_VS),
+	.VGA_HS      (VGA_HS)
 );
 
 
@@ -225,11 +224,11 @@ mist_video #(.COLOR_DEPTH(1), .SD_HCNT_WIDTH(10)) mist_video (
 	(
 		.CLK_50MHZ(CLOCK_27),
 		
-		.VGA_R(VGA_R),
-		.VGA_G(VGA_G),
-		.VGA_B(VGA_B),
-		.VGA_HSYNC(VGA_HS),
-		.VGA_VSYNC(VGA_VS),
+		.VGA_R(core_r),
+		.VGA_G(core_g),
+		.VGA_B(core_b),
+		.VGA_HSYNC(core_hs),
+		.VGA_VSYNC(core_vs),
 		.frame_on(),
 		
 		.clk_25(clk_sys),
@@ -268,9 +267,9 @@ mist_video #(.COLOR_DEPTH(1), .SD_HCNT_WIDTH(10)) mist_video (
 		.RS232_HOST_TXD(),
 		.RS232_HOST_RST(),
 		
-		.GPIO(), //{IO, GPIO}), // jepalza, anulados
+		.GPIO(), //{IO, GPIO}), 
 		
-		.I2C_SCL(),//I2C_SCLK), // JEPALZA, ANULADOS
+		.I2C_SCL(),//I2C_SCLK), 
 		.I2C_SDA() //I2C_SDAT)
 	);
 	

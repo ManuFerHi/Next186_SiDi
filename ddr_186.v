@@ -746,22 +746,7 @@ module system
 		 .out2(timer_spk)
     );
 	 
-	 soundwave sound_gen
-	 (
-		.CLK(clk_cpu),
-		.CLK44100x256(CLK44100x256),
-		.data(CPU_DOUT),
-		.we(IORQ & CPU_CE & WR & PARALLEL_PORT),
-		.word(WORD),
-		.speaker(speaker_on & timer_spk),
-		.opl3left(opl3left),
-        .opl3right(opl3right),
-        .stb44100(stb44100),
-		.full(sq_full),	// when not full, write max 2x1152 16bit samples
-		.dss_full(dss_full),
-		.AUDIO_L(AUD_L),
-		.AUDIO_R(AUD_R)
-	);
+	
 	 
 	DSP32 DSP32_inst
 	(
@@ -789,19 +774,7 @@ module system
 		.INT(I_COM1)
     );
     
-    opl3 opl3_inst (
-        .clk(CLK_50MHZ), // 50Mhz (min 45Mhz)
-        .cpu_clk(clk_cpu),
-        .addr(PORT_ADDR[1:0]),
-        .din(CPU_DOUT[7:0]),
-        .dout(opl32_data),
-        .ce(IORQ & CPU_CE & OPL3_PORT),
-        .wr(WR),
-        .left(opl3left),
-        .right(opl3right),
-        .stb44100(stb44100),
-        .reset(!rstcount[18])    
-     );
+
 	
 	i2c_master_byte i2cmb
 	(
