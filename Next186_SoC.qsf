@@ -10,6 +10,7 @@ set_global_assignment -name LAST_QUARTUS_VERSION "17.1.0 Lite Edition"
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:12:38 DECEMBER 02,2014"
 set_global_assignment -name DEVICE_FILTER_PACKAGE FBGA
 set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "3.3-V LVTTL"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
 
 #============================================================
 # CLOCK
@@ -98,18 +99,6 @@ set_location_assignment PIN_D14 -to DRAM_ADDR[12]
 set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to DRAM_ADDR[12]
 
 
-#============================================================
-# EEPROM, Accelerometer
-#============================================================
-#set_location_assignment PIN_F2 -to I2C_SCLK
-#set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to I2C_SCLK
-#set_location_assignment PIN_F1 -to I2C_SDAT
-#set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to I2C_SDAT
-#set_location_assignment PIN_G5 -to G_SENSOR_CS_N
-#set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to G_SENSOR_CS_N
-#set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to G_SENSOR_CS_N
-#set_location_assignment PIN_M2 -to G_SENSOR_INT
-#set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to G_SENSOR_INT
 
 
 
